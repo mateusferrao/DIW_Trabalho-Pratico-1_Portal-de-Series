@@ -12,6 +12,7 @@
             background-color: red;
             border-color: red;
         }
+
         .form-check-input:checked:focus {
             box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.5);
         }
@@ -43,35 +44,151 @@
                             <a class="nav-link text-white" href="tela2.html">Explorador</a>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Pesquisar conteúdo"
-                            aria-label="Search">
-                        <button class="btn btn-outline-danger" type="submit">Buscar</button>
-                    </form>
                 </div>
             </div>
         </nav>
     </header>
 
+    <section class="m-3">
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Pesquisar conteúdo"
+                aria-label="Search">
+            <button class="btn btn-danger" type="submit">Buscar</button>
+        </form>
+    </section>
+
     <aside>
-        <ul class="list-group m-3 mt-5">
+        <ul class="list-group m-3 mt-4">
             <li class="list-group-item">
                 <label class="fw-bold">Gêneros</label>
             </li>
             <li class="list-group-item">
-              <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
-              <label class="form-check-label" for="firstCheckbox">First checkbox</label>
+                <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
+                <label class="form-check-label" for="firstCheckbox">Comédia</label>
             </li>
             <li class="list-group-item">
-              <input class="form-check-input me-1" type="checkbox" value="" id="secondCheckbox">
-              <label class="form-check-label" for="secondCheckbox">Second checkbox</label>
+                <input class="form-check-input me-1" type="checkbox" value="" id="secondCheckbox">
+                <label class="form-check-label" for="secondCheckbox">Ação</label>
             </li>
             <li class="list-group-item">
-              <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
-              <label class="form-check-label" for="thirdCheckbox">Third checkbox</label>
+                <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
+                <label class="form-check-label" for="thirdCheckbox">Aventura</label>
             </li>
-          </ul>
+            <li class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
+                <label class="form-check-label" for="fourthCheckbox">Terror</label>
+            </li>
+            <li class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
+                <label class="form-check-label" for="fifthCheckbox">Suspense</label>
+            </li>
+            <li class="list-group-item">
+                <label class="fw-bold">Tipo</label>
+            </li>
+            <li class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
+                <label class="form-check-label" for="sixthCheckbox">Série</label>
+            </li>
+            <li class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="" id="secondCheckbox">
+                <label class="form-check-label" for="seventhCheckbox">Filme</label>
+            </li>
+            <li class="list-group-item d-flex flex-row-reverse">
+                <button type="button" class="btn btn-danger">Filtrar</button>
+            </li>
+        </ul>
     </aside>
+
+    <main>
+        <section class="m-4">
+      
+            <div class="mx-4 d-flex flex-wrap row">
+      
+              <div class="col-lg-4">
+                <div class="card m-auto my-3 w-100 border border-danger border-3 rounded-3">
+                  <img src="img/serie5.jpg" class="card-img-top" alt="...">
+                  <div class="card-body bg-black rounded-bottom">
+                    <h4 class="card-title text-danger fw-bold">Card title</h4>
+                    <p class="card-text text-white">Some quick example text to build on the card title and make up the bulk of
+                      the card's
+                      content.</p>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="col-lg-4">
+                <div class="card m-auto my-3 w-100 border border-danger border-3 rounded-3">
+                  <img src="img/serie6.png" class="card-img-top" alt="...">
+                  <div class="card-body bg-black rounded-bottom">
+                    <h4 class="card-title text-danger fw-bold">Card title</h4>
+                    <p class="card-text text-white">Some quick example text to build on the card title and make up the bulk of
+                      the card's
+                      content.</p>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="col-lg-4">
+                <div class="card m-auto my-3 w-100 border border-danger border-3 rounded-3">
+                  <img src="img/serie7.jpg" class="card-img-top" alt="...">
+                  <div class="card-body bg-black rounded-bottom">
+                    <h4 class="card-title text-danger fw-bold">Card title</h4>
+                    <p class="card-text text-white">Some quick example text to build on the card title and make up the bulk of
+                      the card's
+                      content.</p>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="col-lg-4">
+                <div class="card m-auto my-3 w-100 border border-danger border-3 rounded-3">
+                  <img src="img/serie8.jpg" class="card-img-top" alt="...">
+                  <div class="card-body bg-black rounded-bottom">
+                    <h4 class="card-title text-danger fw-bold">Card title</h4>
+                    <p class="card-text text-white">Some quick example text to build on the card title and make up the bulk of
+                      the card's
+                      content.</p>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="col-lg-4">
+                <div class="card m-auto my-3 w-100 border border-danger border-3 rounded-3">
+                  <img src="img/serie9.jpg" class="card-img-top" alt="...">
+                  <div class="card-body bg-black rounded-bottom">
+                    <h4 class="card-title text-danger fw-bold">Card title</h4>
+                    <p class="card-text text-white">Some quick example text to build on the card title and make up the bulk of
+                      the card's
+                      content.</p>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="col-lg-4">
+                <div class="card m-auto my-3 w-100 border border-danger border-3 rounded-3">
+                  <img src="img/serie10.jpg" class="card-img-top" alt="...">
+                  <div class="card-body bg-black rounded-bottom">
+                    <h4 class="card-title text-danger fw-bold">Card title</h4>
+                    <p class="card-text text-white">Some quick example text to build on the card title and make up the bulk of
+                      the card's
+                      content.</p>
+                  </div>
+                </div>
+              </div>
+      
+            </div>
+          </section>
+    </main>
+
+    <footer>
+        <nav class="navbar bg-black">
+          <div class="container-fluid">
+            <a class="navbar-brand text-danger fs-5" href="#">
+              <span class="fw-bold fs-4">NETFLIX</span> - Todos os direitos reservados
+            </a>
+          </div>
+        </nav>
+      </footer>
 
 </body>
 
