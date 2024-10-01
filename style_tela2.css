@@ -1,0 +1,25 @@
+.form-check-input:checked {
+    background-color: red;
+    border-color: red;
+}
+
+.form-check-input:checked:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.5);
+}
+
+.corimg{
+    filter: grayscale(100%);
+}
+
+@media screen and (max-width:768px) {
+    header{
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 9999;
+    }
+
+    .col-md-3{
+        padding-top: 80px;
+    }
+  }
