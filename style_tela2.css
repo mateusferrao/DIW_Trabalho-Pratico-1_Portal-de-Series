@@ -11,7 +11,7 @@
     filter: grayscale(100%);
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:992px) {
     header{
       position: fixed;
       width: 100%;
@@ -19,7 +19,7 @@
       z-index: 9999;
     }
 
-    .col-md-3{
+    .container{
         padding-top: 80px;
     }
   }
