@@ -7,10 +7,6 @@
     box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.5);
 }
 
-.corimg{
-    filter: grayscale(100%);
-}
-
 @media screen and (max-width:992px) {
     header{
       position: fixed;
@@ -20,6 +16,6 @@
     }
 
     .container{
-        padding-top: 80px;
+        padding-top: 100px;
     }
   }
