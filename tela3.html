@@ -33,7 +33,7 @@
               <a class="nav-link active text-white" aria-current="page" href="tela1.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-danger" href="tela2.html">Explorador</a>
+              <a class="nav-link text-white" href="tela2.html">Explorador</a>
             </li>
           </ul>
         </div>
@@ -42,12 +42,13 @@
   </header>
 
   <main>
+    
     <div class="d-lg-flex mx-2">
       <section class="m-3 mt-5 pb-2 col-lg-4">
         <h2 class="fw-bold border-bottom border-black pb-2">Visão Geral</h2>
         <div class="card m-auto w-100 border-2 border-danger rounded-3 bg-black" style="width: 18rem;">
           <div class="text-end my-2 me-2">
-            <button type="button" class="btn btn-outline-danger"><i class="bi bi-star-fill fs-4"></i></button>
+            <button type="button" id="botaoFavoritar" class="btn btn-outline-danger"><i class="bi bi-star-fill fs-4"></i></button>
           </div>
           <img src="img/big-poster-filme-joker-coringa-joaquin-phoenix-tam-90x60-cm-nerd.png" class="card-img-top rounded-top-0"
             alt="...">
@@ -124,11 +125,11 @@
 
         <div class="col-lg-8 m-auto">
           <div class="d-flex flex-wrap row g-3">
-            <div class="col-lg-6">
-              <div class="border-2 border-danger card m-auto my-1" style="width: 100%;">
+            <div class="col-lg-4" id="wCard">
+              <div class="border-2 border-danger card m-auto my-1 w-100">
                 <img src="img/perfil.png" class="card-img-top" alt="...">
                 <div class="card-body bg-black rounded-1 rounded-top-0">
-                  <h3 class="card-title text-danger">Personagem</h3>
+                  <h3 class="card-title text-danger">PERSONA</h3>
                   <p class="card-text fs-5 text-danger">Nome do ator</p>
                   <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
                     data-bs-target="#exampleModal">
@@ -162,11 +163,11 @@
               </div>
             </div>
 
-            <div class="col-lg-6">
-              <div class="card m-auto my-1 border-2 border-danger" style="width: 100%;">
+            <div class="col-lg-4" id="wCard">
+              <div class="card m-auto my-1 border-2 border-danger w-100">
                 <img src="img/perfil.png" class="card-img-top" alt="...">
                 <div class="card-body bg-black rounded-1 rounded-top-0">
-                  <h3 class="card-title text-danger">Personagem</h3>
+                  <h3 class="card-title text-danger">PERSONA</h3>
                   <p class="card-text fs-5 text-danger">Nome do ator</p>
                   <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
                     data-bs-target="#exampleModal">
@@ -200,11 +201,11 @@
               </div>
             </div>
 
-            <div class="col-lg-6">
-              <div class="card m-auto my-1 border-2 border-danger" style="width: 100%;">
+            <div class="col-lg-4" id="wCard">
+              <div class="card m-auto my-1 border-2 border-danger w-100">
                 <img src="img/perfil.png" class="card-img-top" alt="...">
                 <div class="card-body bg-black rounded-1 rounded-top-0">
-                  <h3 class="card-title text-danger">Personagem</h3>
+                  <h3 class="card-title text-danger">PERSONA</h3>
                   <p class="card-text fs-5 text-danger">Nome do ator</p>
                   <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
                     data-bs-target="#exampleModal">
@@ -238,11 +239,87 @@
               </div>
             </div>
 
-            <div class="col-lg-6">
-              <div class="card m-auto my-1 border-2 border-danger" style="width: 100%;">
+            <div class="col-lg-4" id="wCard">
+              <div class="card m-auto my-1 border-2 border-danger w-100">
                 <img src="img/perfil.png" class="card-img-top" alt="...">
                 <div class="card-body bg-black rounded-1 rounded-top-0">
-                  <h3 class="card-title text-danger">Personagem</h3>
+                  <h3 class="card-title text-danger">PERSONA</h3>
+                  <p class="card-text fs-5 text-danger">Nome do ator</p>
+                  <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    Redes Sociais
+                  </button>
+                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header bg-black">
+                          <h1 class="modal-title fs-5 text-danger" id="exampleModalLabel">Redes Sociais</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body bg-black">
+                          <ul class="list-unstyled">
+                            <li><a href="https://github.com/mateusferrao/DIW_Trabalho-Pratico-1_Portal-de-Series"
+                                target="_blank" class="fs-3 mx-2 text-danger text-decoration-none"><i
+                                  class="bi bi-github" style="font-size: 2rem"></i>@PERFIL_ATOR</a></li>
+                            <li><a href="https://www.instagram.com" target="_blank"
+                                class="fs-3 mx-2 text-danger text-decoration-none"><i class="bi bi-instagram"
+                                  style="font-size: 2rem"></i>@PERFIL_ATOR</a></li>
+                          </ul>
+                        </div>
+                        <div class="modal-footer bg-black">
+                          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4" id="wCard">
+              <div class="card m-auto my-1 border-2 border-danger w-100">
+                <img src="img/perfil.png" class="card-img-top" alt="...">
+                <div class="card-body bg-black rounded-1 rounded-top-0">
+                  <h3 class="card-title text-danger">PERSONA</h3>
+                  <p class="card-text fs-5 text-danger">Nome do ator</p>
+                  <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    Redes Sociais
+                  </button>
+                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header bg-black">
+                          <h1 class="modal-title fs-5 text-danger" id="exampleModalLabel">Redes Sociais</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body bg-black">
+                          <ul class="list-unstyled">
+                            <li><a href="https://github.com/mateusferrao/DIW_Trabalho-Pratico-1_Portal-de-Series"
+                                target="_blank" class="fs-3 mx-2 text-danger text-decoration-none"><i
+                                  class="bi bi-github" style="font-size: 2rem"></i>@PERFIL_ATOR</a></li>
+                            <li><a href="https://www.instagram.com" target="_blank"
+                                class="fs-3 mx-2 text-danger text-decoration-none"><i class="bi bi-instagram"
+                                  style="font-size: 2rem"></i>@PERFIL_ATOR</a></li>
+                          </ul>
+                        </div>
+                        <div class="modal-footer bg-black">
+                          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4" id="wCard">
+              <div class="card m-auto my-1 border-2 border-danger w-100">
+                <img src="img/perfil.png" class="card-img-top" alt="...">
+                <div class="card-body bg-black rounded-1 rounded-top-0">
+                  <h3 class="card-title text-danger">PERSONA</h3>
                   <p class="card-text fs-5 text-danger">Nome do ator</p>
                   <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
                     data-bs-target="#exampleModal">
@@ -292,7 +369,7 @@
               <a href="#" class="text-decoration-none">
                 <h4 class="card-title text-danger fw-bold">EPISÓDIO X</h4>
               </a>
-              <p class="card-text text-danger">TEMPORADA Y</p>
+              <p class="card-text text-danger">TEMPORADA Y (ANO)</p>
             </div>
           </div>
         </div>
@@ -304,7 +381,7 @@
               <a href="#" class="text-decoration-none">
                 <h4 class="card-title text-danger fw-bold">EPISÓDIO X</h4>
               </a>
-              <p class="card-text text-danger">TEMPORADA Y</p>
+              <p class="card-text text-danger">TEMPORADA Y (ANO)</p>
             </div>
           </div>
         </div>
@@ -316,7 +393,7 @@
               <a href="#" class="text-decoration-none">
                 <h4 class="card-title text-danger fw-bold">EPISÓDIO X</h4>
               </a>
-              <p class="card-text text-danger">TEMPORADA Y</p>
+              <p class="card-text text-danger">TEMPORADA Y (ANO)</p>
             </div>
           </div>
         </div>
@@ -328,7 +405,7 @@
               <a href="#" class="text-decoration-none">
                 <h4 class="card-title text-danger fw-bold">EPISÓDIO X</h4>
               </a>
-              <p class="card-text text-danger">TEMPORADA Y</p>
+              <p class="card-text text-danger">TEMPORADA Y (ANO)</p>
             </div>
           </div>
         </div>

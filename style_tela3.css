@@ -8,7 +8,7 @@
 }
 
 .accordion-button.collapsed {
-    background: blue
+    background: red
   }
   
   .accordion-button.collapsed::after {
@@ -25,6 +25,16 @@
 
     main{
         padding-top: 50px;
+    }
+
+    footer{
+      width: 100%;
+    }
+
+    #wCard{
+      width: 75%;
+      margin-right: auto;
+      margin-left: auto;
     }
 
 }
