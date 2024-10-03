@@ -3,6 +3,10 @@
   src: url(font/bebas_neue/BebasNeue-Regular.ttf)
 }
 
+body {
+  overflow-x: hidden;
+}
+
 *{
   font-family: Bebas;
 }
