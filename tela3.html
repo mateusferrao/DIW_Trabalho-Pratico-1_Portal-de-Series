@@ -45,8 +45,11 @@
     <div class="d-lg-flex mx-2">
       <section class="m-3 mt-5 pb-2 col-lg-4">
         <h2 class="fw-bold border-bottom border-black pb-2">Visão Geral</h2>
-        <div class="card m-auto w-100 border-2 border-danger rounded-3" style="width: 18rem;">
-          <img src="img/big-poster-filme-joker-coringa-joaquin-phoenix-tam-90x60-cm-nerd.png" class="card-img-top"
+        <div class="card m-auto w-100 border-2 border-danger rounded-3 bg-black" style="width: 18rem;">
+          <div class="text-end my-2 me-2">
+            <button type="button" class="btn btn-outline-danger">Favoritar</button>
+          </div>
+          <img src="img/big-poster-filme-joker-coringa-joaquin-phoenix-tam-90x60-cm-nerd.png" class="card-img-top rounded-top-0"
             alt="...">
           <div class="card-body bg-black rounded-2 rounded-top-0">
             <h2 class="card-title text-danger">TÍTULO (ANO)</h2>
@@ -160,123 +163,179 @@
             </div>
 
             <div class="col-lg-6">
-            <div class="card m-auto my-1 border-2 border-danger" style="width: 100%;">
-              <img src="img/perfil.png" class="card-img-top" alt="...">
-              <div class="card-body bg-black rounded-1 rounded-top-0">
-                <h3 class="card-title text-danger">Personagem</h3>
-                <p class="card-text fs-5 text-danger">Nome do ator</p>
-                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
-                  data-bs-target="#exampleModal">
-                  Redes Sociais
-                </button>
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                  aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header bg-black">
-                        <h1 class="modal-title fs-5 text-danger" id="exampleModalLabel">Redes Sociais</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body bg-black">
-                        <ul class="list-unstyled">
-                          <li><a href="https://github.com/mateusferrao/DIW_Trabalho-Pratico-1_Portal-de-Series"
-                              target="_blank" class="fs-3 mx-2 text-danger text-decoration-none"><i class="bi bi-github"
-                                style="font-size: 2rem"></i>@PERFILATOR</a></li>
-                          <li><a href="https://www.instagram.com" target="_blank"
-                              class="text-decoration-none fs-3 mx-2 text-danger"><i class="bi bi-instagram"
-                                style="font-size: 2rem"></i>@PERFILATOR</a></li>
-                        </ul>
-                      </div>
-                      <div class="modal-footer bg-black">
-                        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Fechar</button>
+              <div class="card m-auto my-1 border-2 border-danger" style="width: 100%;">
+                <img src="img/perfil.png" class="card-img-top" alt="...">
+                <div class="card-body bg-black rounded-1 rounded-top-0">
+                  <h3 class="card-title text-danger">Personagem</h3>
+                  <p class="card-text fs-5 text-danger">Nome do ator</p>
+                  <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    Redes Sociais
+                  </button>
+                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header bg-black">
+                          <h1 class="modal-title fs-5 text-danger" id="exampleModalLabel">Redes Sociais</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body bg-black">
+                          <ul class="list-unstyled">
+                            <li><a href="https://github.com/mateusferrao/DIW_Trabalho-Pratico-1_Portal-de-Series"
+                                target="_blank" class="fs-3 mx-2 text-danger text-decoration-none"><i
+                                  class="bi bi-github" style="font-size: 2rem"></i>@PERFILATOR</a></li>
+                            <li><a href="https://www.instagram.com" target="_blank"
+                                class="text-decoration-none fs-3 mx-2 text-danger"><i class="bi bi-instagram"
+                                  style="font-size: 2rem"></i>@PERFILATOR</a></li>
+                          </ul>
+                        </div>
+                        <div class="modal-footer bg-black">
+                          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Fechar</button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-lg-6">
-            <div class="card m-auto my-1 border-2 border-danger" style="width: 100%;">
-              <img src="img/perfil.png" class="card-img-top" alt="...">
-              <div class="card-body bg-black rounded-1 rounded-top-0">
-                <h3 class="card-title text-danger">Personagem</h3>
-                <p class="card-text fs-5 text-danger">Nome do ator</p>
-                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
-                  data-bs-target="#exampleModal">
-                  Redes Sociais
-                </button>
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                  aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header bg-black">
-                        <h1 class="modal-title fs-5 text-danger" id="exampleModalLabel">Redes Sociais</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body bg-black">
-                        <ul class="list-unstyled">
-                          <li><a href="https://github.com/mateusferrao/DIW_Trabalho-Pratico-1_Portal-de-Series"
-                              target="_blank" class="fs-3 mx-2 text-danger text-decoration-none"><i class="bi bi-github"
-                                style="font-size: 2rem"></i>@PERFILATOR</a></li>
-                          <li><a href="https://www.instagram.com" target="_blank"
-                              class="text-decoration-none fs-3 mx-2 text-danger"><i class="bi bi-instagram"
-                                style="font-size: 2rem"></i>@PERFILATOR</a></li>
-                        </ul>
-                      </div>
-                      <div class="modal-footer bg-black">
-                        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Fechar</button>
+            <div class="col-lg-6">
+              <div class="card m-auto my-1 border-2 border-danger" style="width: 100%;">
+                <img src="img/perfil.png" class="card-img-top" alt="...">
+                <div class="card-body bg-black rounded-1 rounded-top-0">
+                  <h3 class="card-title text-danger">Personagem</h3>
+                  <p class="card-text fs-5 text-danger">Nome do ator</p>
+                  <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    Redes Sociais
+                  </button>
+                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header bg-black">
+                          <h1 class="modal-title fs-5 text-danger" id="exampleModalLabel">Redes Sociais</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body bg-black">
+                          <ul class="list-unstyled">
+                            <li><a href="https://github.com/mateusferrao/DIW_Trabalho-Pratico-1_Portal-de-Series"
+                                target="_blank" class="fs-3 mx-2 text-danger text-decoration-none"><i
+                                  class="bi bi-github" style="font-size: 2rem"></i>@PERFILATOR</a></li>
+                            <li><a href="https://www.instagram.com" target="_blank"
+                                class="text-decoration-none fs-3 mx-2 text-danger"><i class="bi bi-instagram"
+                                  style="font-size: 2rem"></i>@PERFILATOR</a></li>
+                          </ul>
+                        </div>
+                        <div class="modal-footer bg-black">
+                          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Fechar</button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-lg-6">
-            <div class="card m-auto my-1 border-2 border-danger" style="width: 100%;">
-              <img src="img/perfil.png" class="card-img-top" alt="...">
-              <div class="card-body bg-black rounded-1 rounded-top-0">
-                <h3 class="card-title text-danger">Personagem</h3>
-                <p class="card-text fs-5 text-danger">Nome do ator</p>
-                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
-                  data-bs-target="#exampleModal">
-                  Redes Sociais
-                </button>
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                  aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header bg-black">
-                        <h1 class="modal-title fs-5 text-danger" id="exampleModalLabel">Redes Sociais</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body bg-black">
-                        <ul class="list-unstyled">
-                          <li><a href="https://github.com/mateusferrao/DIW_Trabalho-Pratico-1_Portal-de-Series"
-                              target="_blank" class="fs-3 mx-2 text-danger text-decoration-none"><i class="bi bi-github"
-                                style="font-size: 2rem"></i>@PERFILATOR</a></li>
-                          <li><a href="https://www.instagram.com" target="_blank"
-                              class="fs-3 mx-2 text-danger text-decoration-none"><i class="bi bi-instagram"
-                                style="font-size: 2rem"></i>@PERFILATOR</a></li>
-                        </ul>
-                      </div>
-                      <div class="modal-footer bg-black">
-                        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Fechar</button>
+            <div class="col-lg-6">
+              <div class="card m-auto my-1 border-2 border-danger" style="width: 100%;">
+                <img src="img/perfil.png" class="card-img-top" alt="...">
+                <div class="card-body bg-black rounded-1 rounded-top-0">
+                  <h3 class="card-title text-danger">Personagem</h3>
+                  <p class="card-text fs-5 text-danger">Nome do ator</p>
+                  <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    Redes Sociais
+                  </button>
+                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header bg-black">
+                          <h1 class="modal-title fs-5 text-danger" id="exampleModalLabel">Redes Sociais</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body bg-black">
+                          <ul class="list-unstyled">
+                            <li><a href="https://github.com/mateusferrao/DIW_Trabalho-Pratico-1_Portal-de-Series"
+                                target="_blank" class="fs-3 mx-2 text-danger text-decoration-none"><i
+                                  class="bi bi-github" style="font-size: 2rem"></i>@PERFILATOR</a></li>
+                            <li><a href="https://www.instagram.com" target="_blank"
+                                class="fs-3 mx-2 text-danger text-decoration-none"><i class="bi bi-instagram"
+                                  style="font-size: 2rem"></i>@PERFILATOR</a></li>
+                          </ul>
+                        </div>
+                        <div class="modal-footer bg-black">
+                          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Fechar</button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
           </div>
         </div>
       </section>
     </div>
 
+    <section class="m-4">
+      <h2 class="fw-bold border-bottom border-black pb-2">Temporadas e Episódios</h2>
+
+      <div class="mx-4 d-flex flex-wrap row">
+
+        <div class="col-lg-3">
+          <div class="card m-auto my-3 w-100 border border-danger border-3 rounded-3">
+            <img src="img/serie1.jpg" class="card-img-top" alt="...">
+            <div class="card-body bg-black rounded-bottom">
+              <a href="tela3.html" class="text-decoration-none">
+                <h4 class="card-title text-danger fw-bold">EPISÓDIO X</h4>
+              </a>
+              <p class="card-text text-white">TEMPORADA Y</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="card m-auto my-3 w-100 border border-danger border-3 rounded-3">
+            <img src="img/serie2.jpg" class="card-img-top" alt="...">
+            <div class="card-body bg-black rounded-bottom">
+              <a href="tela3.html" class="text-decoration-none">
+                <h4 class="card-title text-danger fw-bold">EPISÓDIO X</h4>
+              </a>
+              <p class="card-text text-white">TEMPORADA Y</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="card m-auto my-3 w-100 border border-danger border-3 rounded-3">
+            <img src="img/serie3.jpg" class="card-img-top" alt="...">
+            <div class="card-body bg-black rounded-bottom">
+              <a href="tela3.html" class="text-decoration-none">
+                <h4 class="card-title text-danger fw-bold">EPISÓDIO X</h4>
+              </a>
+              <p class="card-text text-white">TEMPORADA Y</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="card m-auto my-3 w-100 border border-danger border-3 rounded-3">
+            <img src="img/serie4.jpg" class="card-img-top" alt="...">
+            <div class="card-body bg-black rounded-bottom">
+              <a href="tela3.html" class="text-decoration-none">
+                <h4 class="card-title text-danger fw-bold">EPISÓDIO X</h4>
+              </a>
+              <p class="card-text text-white">TEMPORADA Y</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
   </main>
 
 
