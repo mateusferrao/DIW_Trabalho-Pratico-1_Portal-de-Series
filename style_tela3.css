@@ -23,10 +23,6 @@
       z-index: 9999;
     }
 
-    main{
-        padding-top: 50px;
-    }
-
     footer{
       width: 100%;
     }
@@ -36,5 +32,10 @@
       margin-right: auto;
       margin-left: auto;
     }
+
+    #botaoVoltar{
+      padding-top: 75px;
+    }
+
 
 }
