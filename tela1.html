@@ -57,19 +57,19 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <a href="tela3.html"><img src="img/capa3.jpg" class="d-block w-100" alt="..."></a>
+            <a href="#"><img src="img/capa3.jpg" class="d-block w-100" alt="..."></a>
             <div class="carousel-caption d-none d-lg-block">
               <h5>Arrow</h5>
             </div>
           </div>
           <div class="carousel-item">
-            <a href="tela3.html"><img src="img/the-office.jpg" class="d-block w-100" alt="..."></a>
+            <a href="#"><img src="img/the-office.jpg" class="d-block w-100" alt="..."></a>
             <div class="carousel-caption d-none d-lg-block">
               <h5>The Office</h5>
             </div>
           </div>
           <div class="carousel-item">
-            <a href="tela3.html"><img src="img/modernfamily.jpg" class="d-block w-100" alt="..."></a>
+            <a href="#"><img src="img/modernfamily.jpg" class="d-block w-100" alt="..."></a>
             <div class="carousel-caption d-none d-lg-block">
               <h5>Modern Family</h5>
             </div>
@@ -92,7 +92,7 @@
       <h2 class="fw-bold border-bottom border-black pb-2">Novas Séries</h2>
 
       <div class="mx-4 d-flex flex-wrap row" id="novasSeries">
-        <script>
+        <!-- <script>
           fetch('https://api.themoviedb.org/3/tv/popular?language=pt-BR&api_key=5c466935d6f12993aa42dbff45b7dc2d')
             .then(response => response.json())
             .then(data => {
@@ -107,9 +107,9 @@
                 let posterPath = `https://image.tmdb.org/t/p/w200${data.results[i].poster_path}`;
                 telaNovasSeries.innerHTML += `<div class="col-lg-3">
                   <div class="card m-auto my-3 border border-danger border-3 rounded-3" style="width: 18rem">
-                    <a href="tela3.html"><img src="${posterPath}" class="card-img-top" alt="${data.results[i].name}"></a>
+                    <a href = "tela3.html?name=${encodeURIComponent(result.name)}&genres=${encodeURIComponent(genres)}&ano=${encodeURIComponent(ano)}&posterPath=${encodeURIComponent(posterPath)}&overview=${encodeURIComponent(overview)}&avaliacao=${encodeURIComponent(avaliacao)}&pais=${encodeURIComponent(pais)}"><img src="${posterPath}" class="card-img-top" alt="${data.results[i].name}"></a>
                     <div class="card-body bg-black rounded-bottom">
-                      <a href="tela3.html" class="text-decoration-none"><h4 class="card-title text-danger fw-bold">${data.results[i].name}</h4></a>
+                      <a href = "tela3.html?name=${encodeURIComponent(result.name)}&genres=${encodeURIComponent(genres)}&ano=${encodeURIComponent(ano)}&posterPath=${encodeURIComponent(posterPath)}&overview=${encodeURIComponent(overview)}&avaliacao=${encodeURIComponent(avaliacao)}&pais=${encodeURIComponent(pais)}" class="text-decoration-none"><h4 class="card-title text-danger fw-bold">${data.results[i].name}</h4></a>
                       <p class="card-text text-white" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">${descricao}</p>
                     </div>
                   </div>
@@ -117,6 +117,74 @@
               }
             })  
             .catch(error => console.error(error))
+        </script> -->
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            const apiKey = '5c466935d6f12993aa42dbff45b7dc2d';
+            const genreMap = {};
+      
+            fetch(`https://api.themoviedb.org/3/genre/tv/list?api_key=${apiKey}&language=pt-BR`)
+              .then(response => response.json())
+              .then(data => {
+                console.log(data);
+                data.genres.forEach(genre => {
+                  genreMap[genre.id] = genre.name;
+                });
+      
+                return fetch(`https://api.themoviedb.org/3/tv/popular?language=pt-BR&api_key=5c466935d6f12993aa42dbff45b7dc2d`);
+              })
+              .then(response => response.json())
+              .then(data => {
+                displayResults(data.results);
+              })
+              .catch(error => console.error(error));
+      
+            function displayResults(results) {
+              let telaNovasSeries = document.getElementById('novasSeries');
+              console.log(results[0]);
+              for(let i = 0; i < 4; i++){
+                displayCard(results[i]);
+              }
+            }
+      
+            function displayCard(result) {
+              let telaNovasSeries = document.getElementById('novasSeries');
+              let posterPath = `https://image.tmdb.org/t/p/w200${result.poster_path}`;
+              let genres = result.genre_ids.map(id => genreMap[id]).join(', ');
+              let ano = result.first_air_date ? result.first_air_date.split('-')[0] : 'N/A';
+              let overview = result.overview;
+              if (overview == "") {
+                overview = "Sem descrição";
+              } else if (overview.length > 100) {
+                overview = overview.substring(0, 100) + "...";
+              }
+              let avaliacao = result.vote_average;
+              let pais = result.origin_country;
+              console.log(result);
+      
+              let cardHTML = `
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 mb-4">
+                  <div class="card m-auto my-3 border border-danger border-3 rounded-3" style="width: 18rem">
+                    <img src="${posterPath}" class="card-img-top" alt="${result.name}">
+                    <div class="card-body bg-black rounded-bottom">
+                      <a href="tela3.html?name=${encodeURIComponent(result.name)}&genres=${encodeURIComponent(genres)}&ano=${encodeURIComponent(ano)}&posterPath=${encodeURIComponent(posterPath)}&overview=${encodeURIComponent(result.overview)}&avaliacao=${encodeURIComponent(avaliacao)}&pais=${encodeURIComponent(pais)}" class="text-decoration-none">
+                        <h5 class="card-title text-danger fw-bold">${result.name}</h5>
+                      </a>
+                      <ul class="card-text m-0 p-0">
+                        <li class="text-white list-unstyled">${overview}</li>
+                        <li class="list-group-item bg-black border-top-0 border-2 border-danger d-flex flex-row-reverse">
+                          <a href="tela3.html?name=${encodeURIComponent(result.name)}&genres=${encodeURIComponent(genres)}&ano=${encodeURIComponent(ano)}&posterPath=${encodeURIComponent(posterPath)}&overview=${encodeURIComponent(result.overview)}&avaliacao=${encodeURIComponent(avaliacao)}&pais=${encodeURIComponent(pais)}">
+                            <button type="button" class="btn btn-outline-danger">Ver Mais</button>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>`;
+              
+                telaNovasSeries.innerHTML += cardHTML;
+            }
+          });
         </script>
       </div>
 
