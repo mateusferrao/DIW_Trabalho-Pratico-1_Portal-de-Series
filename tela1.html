@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
@@ -59,22 +59,19 @@
           <div class="carousel-item active">
             <a href="tela3.html"><img src="img/capa3.jpg" class="d-block w-100" alt="..."></a>
             <div class="carousel-caption d-none d-lg-block">
-              <h5>First slide label</h5>
-              <p>Some representative placeholder content for the first slide.</p>
+              <h5>Arrow</h5>
             </div>
           </div>
           <div class="carousel-item">
             <a href="tela3.html"><img src="img/the-office.jpg" class="d-block w-100" alt="..."></a>
             <div class="carousel-caption d-none d-lg-block">
-              <h5>Second slide label</h5>
-              <p>Some representative placeholder content for the second slide.</p>
+              <h5>The Office</h5>
             </div>
           </div>
           <div class="carousel-item">
             <a href="tela3.html"><img src="img/modernfamily.jpg" class="d-block w-100" alt="..."></a>
             <div class="carousel-caption d-none d-lg-block">
-              <h5>Third slide label</h5>
-              <p>Some representative placeholder content for the third slide.</p>
+              <h5>Modern Family</h5>
             </div>
           </div>
         </div>
@@ -94,56 +91,33 @@
     <section class="m-4">
       <h2 class="fw-bold border-bottom border-black pb-2">Novas Séries</h2>
 
-      <div class="mx-4 d-flex flex-wrap row">
-
-        <div class="col-lg-3">
-          <div class="card m-auto my-3 w-100 border border-danger border-3 rounded-3">
-            <a href="tela3.html"><img src="img/serie1.jpg" class="card-img-top" alt="..."></a>
-            <div class="card-body bg-black rounded-bottom">
-              <a href="tela3.html" class="text-decoration-none"><h4 class="card-title text-danger fw-bold">Card title</h4></a>
-              <p class="card-text text-white">Some quick example text to build on the card title and make up the bulk of
-                the card's
-                content.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3">
-          <div class="card m-auto my-3 w-100 border border-danger border-3 rounded-3">
-            <a href="tela3.html"><img src="img/serie2.jpg" class="card-img-top" alt="..."></a>
-            <div class="card-body bg-black rounded-bottom">
-              <a href="tela3.html" class="text-decoration-none"><h4 class="card-title text-danger fw-bold">Card title</h4></a>
-              <p class="card-text text-white">Some quick example text to build on the card title and make up the bulk of
-                the card's
-                content.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3">
-          <div class="card m-auto my-3 w-100 border border-danger border-3 rounded-3">
-            <a href="tela3.html"><img src="img/serie3.jpg" class="card-img-top" alt="..."></a>
-            <div class="card-body bg-black rounded-bottom">
-              <a href="tela3.html" class="text-decoration-none"><h4 class="card-title text-danger fw-bold">Card title</h4></a>
-              <p class="card-text text-white">Some quick example text to build on the card title and make up the bulk of
-                the card's
-                content.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3">
-          <div class="card m-auto my-3 w-100 border border-danger border-3 rounded-3">
-            <a href="tela3.html"><img src="img/serie4.jpg" class="card-img-top" alt="..."></a>
-            <div class="card-body bg-black rounded-bottom">
-              <a href="tela3.html" class="text-decoration-none"><h4 class="card-title text-danger fw-bold">Card title</h4></a>
-              <p class="card-text text-white">Some quick example text to build on the card title and make up the bulk of
-                the card's
-                content.</p>
-            </div>
-          </div>
-        </div>
-
+      <div class="mx-4 d-flex flex-wrap row" id="novasSeries">
+        <script>
+          fetch('https://api.themoviedb.org/3/tv/popular?language=pt-BR&api_key=5c466935d6f12993aa42dbff45b7dc2d')
+            .then(response => response.json())
+            .then(data => {
+              let novasSeries = data.results.slice(0, 4);
+              console.log(novasSeries);
+              let telaNovasSeries = document.getElementById('novasSeries');
+              for(let i = 0; i < 4; i++){
+                let descricao = data.results[i].overview;
+                if (descricao == "") {
+                  descricao = "Sem descrição";
+                }
+                let posterPath = `https://image.tmdb.org/t/p/w200${data.results[i].poster_path}`;
+                telaNovasSeries.innerHTML += `<div class="col-lg-3">
+                  <div class="card m-auto my-3 border border-danger border-3 rounded-3" style="width: 18rem">
+                    <a href="tela3.html"><img src="${posterPath}" class="card-img-top" alt="${data.results[i].name}"></a>
+                    <div class="card-body bg-black rounded-bottom">
+                      <a href="tela3.html" class="text-decoration-none"><h4 class="card-title text-danger fw-bold">${data.results[i].name}</h4></a>
+                      <p class="card-text text-white" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">${descricao}</p>
+                    </div>
+                  </div>
+                </div>`;
+              }
+            })  
+            .catch(error => console.error(error))
+        </script>
       </div>
 
     </section>
