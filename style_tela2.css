@@ -16,7 +16,7 @@
     box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.5);
 }
 
-@media screen and (max-width:992px) {
+/* @media screen and (max-width:992px) {
     header{
       position: fixed;
       width: 100%;
@@ -27,4 +27,4 @@
     .container{
         padding-top: 90px;
     }
-}
+} */
