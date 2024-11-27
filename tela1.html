@@ -1,351 +1,512 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="img/favicon-16x16.png" />
+    <link rel="stylesheet" href="style_tela1.css" />
+    <title>Home</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="shortcut icon" href="img/favicon-16x16.png" />
-  <link rel="stylesheet" href="style_tela1.css">
-  <title>Home</title>
-</head>
+  <body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
 
-<body>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-
-  <header>
-
-    <nav class="navbar navbar-expand-lg bg-black">
-      <div class="container-fluid">
-        <a class="navbar-brand text-danger pt-3" href="#">
-          <h1 class="fw-bold">PRIMEFLIX</h1>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon navbar-dark"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto fs-4">
-            <li class="nav-item">
-              <a class="nav-link active text-danger" aria-current="page" href="tela1.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="tela2.html">Explorador</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-  </header>
-
-  <main>
-    <section class="m-3 mt-5 pb-2">
-      <h2 class="fw-bold border-bottom border-black pb-2">Séries Populares</h2>
-      <div id="carouselExampleCaptions" class="carousel slide m-3 border border-3 border-black">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-            aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-            aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-            aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <a href="#"><img src="img/capa3.jpg" class="d-block w-100" alt="..."></a>
-            <div class="carousel-caption d-none d-lg-block">
-              <h5>Arrow</h5>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <a href="#"><img src="img/the-office.jpg" class="d-block w-100" alt="..."></a>
-            <div class="carousel-caption d-none d-lg-block">
-              <h5>The Office</h5>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <a href="#"><img src="img/modernfamily.jpg" class="d-block w-100" alt="..."></a>
-            <div class="carousel-caption d-none d-lg-block">
-              <h5>Modern Family</h5>
-            </div>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-black">
+        <div class="container-fluid">
+          <a class="navbar-brand text-danger pt-3" href="#">
+            <h1 class="fw-bold">PRIMEFLIX</h1>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon navbar-dark"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto fs-4">
+              <li class="nav-item">
+                <a
+                  class="nav-link active text-danger"
+                  aria-current="page"
+                  href="tela1.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="tela2.html">Explorador</a>
+              </li>
+            </ul>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-          data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-          data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    </section>
+      </nav>
+    </header>
 
-    <section class="m-4">
-      <h2 class="fw-bold border-bottom border-black pb-2">Novas Séries</h2>
+    <main>
+      <section class="m-3 mt-5 pb-2">
+        <h2 class="fw-bold border-bottom border-black pb-2">
+          Séries Populares
+        </h2>
+        <div
+          id="carouselExampleCaptions"
+          class="carousel slide m-3 border border-3 border-black"
+        >
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <a href="#"
+                ><img src="img/capa3.jpg" class="d-block w-100" alt="..."
+              /></a>
+              <div class="carousel-caption d-none d-lg-block">
+                <h5>Arrow</h5>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <a href="#"
+                ><img src="img/the-office.jpg" class="d-block w-100" alt="..."
+              /></a>
+              <div class="carousel-caption d-none d-lg-block">
+                <h5>The Office</h5>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <a href="#"
+                ><img
+                  src="img/modernfamily.jpg"
+                  class="d-block w-100"
+                  alt="..."
+              /></a>
+              <div class="carousel-caption d-none d-lg-block">
+                <h5>Modern Family</h5>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
 
-      <div class="mx-4 d-flex flex-wrap row" id="novasSeries">
-        <!-- <script>
-          fetch('https://api.themoviedb.org/3/tv/popular?language=pt-BR&api_key=5c466935d6f12993aa42dbff45b7dc2d')
-            .then(response => response.json())
-            .then(data => {
-              let novasSeries = data.results.slice(0, 4);
-              console.log(novasSeries);
-              let telaNovasSeries = document.getElementById('novasSeries');
-              for(let i = 0; i < 4; i++){
-                let descricao = data.results[i].overview;
-                if (descricao == "") {
-                  descricao = "Sem descrição";
+      <section class="m-4">
+        <h2 class="fw-bold border-bottom border-black pb-2">Novas Séries</h2>
+
+        <div class="mx-4 row" id="novasSeries">
+          <script>
+            document.addEventListener("DOMContentLoaded", function () {
+              const apiKey = "5c466935d6f12993aa42dbff45b7dc2d";
+              const genreMap = {};
+
+              fetch(
+                `https://api.themoviedb.org/3/genre/tv/list?api_key=${apiKey}&language=pt-BR`
+              )
+                .then((response) => response.json())
+                .then((data) => {
+                  data.genres.forEach((genre) => {
+                    genreMap[genre.id] = genre.name;
+                  });
+
+                  return fetch(
+                    `https://api.themoviedb.org/3/tv/popular?language=pt-BR&api_key=5c466935d6f12993aa42dbff45b7dc2d`
+                  );
+                })
+                .then((response) => response.json())
+                .then((data) => {
+                  displayResults(data.results);
+                })
+                .catch((error) => console.error(error));
+
+              function displayResults(results) {
+                let telaNovasSeries = document.getElementById("novasSeries");
+
+                for (let i = 0; i < 3; i++) {
+                  fetch(
+                    `https://api.themoviedb.org/3/tv/${results[i].id}/credits?api_key=${apiKey}&language=pt-BR`
+                  )
+                    .then((response) => response.json())
+                    .then((creditsData) => {
+            
+                      const actors = creditsData.cast
+                      .slice(0, 12);
+                      displayCard(results[i], actors);
+                    });
                 }
-                let posterPath = `https://image.tmdb.org/t/p/w200${data.results[i].poster_path}`;
-                telaNovasSeries.innerHTML += `<div class="col-lg-3">
-                  <div class="card m-auto my-3 border border-danger border-3 rounded-3" style="width: 18rem">
-                    <a href = "tela3.html?name=${encodeURIComponent(result.name)}&genres=${encodeURIComponent(genres)}&ano=${encodeURIComponent(ano)}&posterPath=${encodeURIComponent(posterPath)}&overview=${encodeURIComponent(overview)}&avaliacao=${encodeURIComponent(avaliacao)}&pais=${encodeURIComponent(pais)}"><img src="${posterPath}" class="card-img-top" alt="${data.results[i].name}"></a>
-                    <div class="card-body bg-black rounded-bottom">
-                      <a href = "tela3.html?name=${encodeURIComponent(result.name)}&genres=${encodeURIComponent(genres)}&ano=${encodeURIComponent(ano)}&posterPath=${encodeURIComponent(posterPath)}&overview=${encodeURIComponent(overview)}&avaliacao=${encodeURIComponent(avaliacao)}&pais=${encodeURIComponent(pais)}" class="text-decoration-none"><h4 class="card-title text-danger fw-bold">${data.results[i].name}</h4></a>
-                      <p class="card-text text-white" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">${descricao}</p>
-                    </div>
-                  </div>
-                </div>`;
               }
-            })  
-            .catch(error => console.error(error))
-        </script> -->
-        <script>
-          document.addEventListener('DOMContentLoaded', function() {
-            const apiKey = '5c466935d6f12993aa42dbff45b7dc2d';
-            const genreMap = {};
-      
-            fetch(`https://api.themoviedb.org/3/genre/tv/list?api_key=${apiKey}&language=pt-BR`)
-              .then(response => response.json())
-              .then(data => {
-                console.log(data);
-                data.genres.forEach(genre => {
-                  genreMap[genre.id] = genre.name;
-                });
-      
-                return fetch(`https://api.themoviedb.org/3/tv/popular?language=pt-BR&api_key=5c466935d6f12993aa42dbff45b7dc2d`);
-              })
-              .then(response => response.json())
-              .then(data => {
-                displayResults(data.results);
-              })
-              .catch(error => console.error(error));
-      
-            function displayResults(results) {
-              let telaNovasSeries = document.getElementById('novasSeries');
-              console.log(results[0]);
-              for(let i = 0; i < 4; i++){
-                displayCard(results[i]);
-              }
-            }
-      
-            function displayCard(result) {
-              let telaNovasSeries = document.getElementById('novasSeries');
-              let posterPath = `https://image.tmdb.org/t/p/w200${result.poster_path}`;
-              let genres = result.genre_ids.map(id => genreMap[id]).join(', ');
-              let ano = result.first_air_date ? result.first_air_date.split('-')[0] : 'N/A';
-              let overview = result.overview;
-              if (overview == "") {
-                overview = "Sem descrição";
-              } else if (overview.length > 100) {
-                overview = overview.substring(0, 100) + "...";
-              }
-              let avaliacao = result.vote_average;
-              let pais = result.origin_country;
-              console.log(result);
-      
-              let cardHTML = `
-                <div class="col-12 col-sm-12 col-md-6 col-lg-3 mb-4">
-                  <div class="card m-auto my-3 border border-danger border-3 rounded-3" style="width: 18rem">
-                    <img src="${posterPath}" class="card-img-top" alt="${result.name}">
-                    <div class="card-body bg-black rounded-bottom">
-                      <a href="tela3.html?name=${encodeURIComponent(result.name)}&genres=${encodeURIComponent(genres)}&ano=${encodeURIComponent(ano)}&posterPath=${encodeURIComponent(posterPath)}&overview=${encodeURIComponent(result.overview)}&avaliacao=${encodeURIComponent(avaliacao)}&pais=${encodeURIComponent(pais)}" class="text-decoration-none">
-                        <h5 class="card-title text-danger fw-bold">${result.name}</h5>
-                      </a>
-                      <ul class="card-text m-0 p-0">
-                        <li class="text-white list-unstyled">${overview}</li>
-                        <li class="list-group-item bg-black border-top-0 border-2 border-danger d-flex flex-row-reverse">
-                          <a href="tela3.html?name=${encodeURIComponent(result.name)}&genres=${encodeURIComponent(genres)}&ano=${encodeURIComponent(ano)}&posterPath=${encodeURIComponent(posterPath)}&overview=${encodeURIComponent(result.overview)}&avaliacao=${encodeURIComponent(avaliacao)}&pais=${encodeURIComponent(pais)}">
-                            <button type="button" class="btn btn-outline-danger">Ver Mais</button>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>`;
-              
+
+              function displayCard(result, actors) {
+                let telaNovasSeries = document.getElementById("novasSeries");
+                let posterPath = `https://image.tmdb.org/t/p/w200${result.poster_path}`;
+                let genres = result.genre_ids
+                  .map((id) => genreMap[id])
+                  .join(", ");
+                let ano = result.first_air_date
+                  ? result.first_air_date.split("-")[0]
+                  : "N/A";
+                let overview = result.overview;
+                if (overview == "") {
+                  overview = "Sem descrição";
+                } else if (overview.length > 100) {
+                  overview = overview.substring(0, 100) + "...";
+                }
+                let avaliacao = result.vote_average;
+                let pais = result.origin_country;
+                let nomeAtores = actors.map(actor => actor.name);
+                let nomePersonagens = actors.map(actor => actor.character);
+
+                let cardHTML = `
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4">
+        <div class="card m-auto my-3 border border-danger border-3 rounded-3" style="width: 18rem">
+          <img src="${posterPath}" class="card-img-top" alt="${result.name}">
+          <div class="card-body bg-black rounded-bottom">
+            <a href="tela3.html?name=${encodeURIComponent(
+              result.name
+            )}&genres=${encodeURIComponent(genres)}&ano=${encodeURIComponent(
+                  ano
+                )}&posterPath=${encodeURIComponent(
+                  posterPath
+                )}&overview=${encodeURIComponent(
+                  result.overview
+                )}&avaliacao=${encodeURIComponent(
+                  avaliacao
+                )}&pais=${encodeURIComponent(pais)}&atores=${encodeURIComponent(
+                  actors
+                )}" class="text-decoration-none">
+              <h5 class="card-title text-danger fw-bold">${result.name}</h5>
+            </a>
+            <ul class="card-text m-0 p-0">
+              <li class="text-white list-unstyled">${overview}</li>
+              <li class="list-group-item bg-black border-top-0 border-2 border-danger d-flex flex-row-reverse">
+                <a href="tela3.html?name=${encodeURIComponent(
+                  result.name
+                )}&genres=${encodeURIComponent(
+                  genres
+                )}&ano=${encodeURIComponent(
+                  ano
+                )}&posterPath=${encodeURIComponent(
+                  posterPath
+                )}&overview=${encodeURIComponent(
+                  result.overview
+                )}&avaliacao=${encodeURIComponent(
+                  avaliacao
+                )}&pais=${encodeURIComponent(pais)}&atores=${encodeURIComponent(
+                  nomeAtores
+                )}
+                &personagens=${encodeURIComponent(nomePersonagens)}">
+                  <button type="button" class="btn btn-outline-danger">Ver Mais</button>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>`;
+
                 telaNovasSeries.innerHTML += cardHTML;
-            }
-          });
-        </script>
+              }
+            });
+          </script>
+        </div>
+      </section>
+
+      <section class="m-4 mt-5 row">
+        <h2 class="fw-bold border-bottom border-black pb-2">
+          Informações do(a) Aluno(a)
+        </h2>
+        <div class="m-3 d-flex flex-wrap row gap-5">
+          <div class="col-lg-7">
+            <h4 class="text-danger">Sobre</h4>
+            <p style="text-align: justify">
+              Meu nome é Mateus, sou estudante de Engenharia de Software na PUC
+              Minas, atualmente cursando o primeiro período. Tenho grande
+              interesse por desenvolvimento de sistemas e tecnologias
+              inovadoras, com foco na criação de soluções eficientes e no
+              aprimoramento de habilidades técnicas, sempre buscando agregar
+              valor por meio de aprendizado contínuo e trabalho em equipe. Meu
+              objetivo é consolidar uma base sólida no curso e me destacar no
+              mercado como um profissional capaz de alinhar teoria e prática de
+              forma eficaz.
+            </p>
+          </div>
+          <div class="col-lg">
+            <div class="col-lg-6">
+              <h4 class="text-danger">Autoria</h4>
+              <div class="d-flex">
+                <img
+                  class="mt-3 col-2"
+                  src="img/perfil.png"
+                  alt=""
+                  width="100px"
+                  style="min-width: 100px"
+                />
+                <ul class="col-10 m-auto mx-3 list-unstyled">
+                  <li><span class="fw-bold">Aluno: </span>Mateus Ferrão</li>
+                  <li>
+                    <span class="fw-bold">Curso: </span>Engenharia de Software
+                  </li>
+                  <li><span class="fw-bold">Turma: </span>Noite</li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <h4 class="text-danger my-3 me-2 d-inline-block">
+                Redes Sociais:
+              </h4>
+              <a
+                href="https://github.com/mateusferrao/DIW_Trabalho-Pratico-1_Portal-de-Series"
+                target="_blank"
+                class="mx-2 text-black"
+                ><i class="bi bi-github" style="font-size: 2rem"></i
+              ></a>
+              <a
+                href="https://www.facebook.com"
+                target="_blank"
+                class="mx-2 text-black"
+                ><i class="bi bi-facebook" style="font-size: 2rem"></i
+              ></a>
+              <a
+                href="https://www.instagram.com"
+                target="_blank"
+                class="mx-2 text-black"
+                ><i class="bi bi-instagram" style="font-size: 2rem"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="m-4">
+        <h2 class="fw-bold border-bottom border-black pb-2">Minhas Séries</h2>
+
+        <div class="mx-4 d-flex flex-wrap row">
+          <div class="col-lg-3">
+            <div
+              class="card m-auto my-3 w-100 border border-danger border-3 rounded-3"
+            >
+              <a href="tela3.html"
+                ><img src="img/serie5.jpg" class="card-img-top" alt="..."
+              /></a>
+              <div class="card-body bg-black rounded-bottom">
+                <a href="tela3.html" class="text-decoration-none"
+                  ><h4 class="card-title text-danger fw-bold">Card title</h4></a
+                >
+                <p class="card-text text-white">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3">
+            <div
+              class="card m-auto my-3 w-100 border border-danger border-3 rounded-3"
+            >
+              <a href="tela3.html"
+                ><img src="img/serie6.png" class="card-img-top" alt="..."
+              /></a>
+              <div class="card-body bg-black rounded-bottom">
+                <a href="tela3.html" class="text-decoration-none"
+                  ><h4 class="card-title text-danger fw-bold">Card title</h4></a
+                >
+                <p class="card-text text-white">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3">
+            <div
+              class="card m-auto my-3 w-100 border border-danger border-3 rounded-3"
+            >
+              <a href="tela3.html"
+                ><img src="img/serie7.jpg" class="card-img-top" alt="..."
+              /></a>
+              <div class="card-body bg-black rounded-bottom">
+                <a href="tela3.html" class="text-decoration-none"
+                  ><h4 class="card-title text-danger fw-bold">Card title</h4></a
+                >
+                <p class="card-text text-white">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3">
+            <div
+              class="card m-auto my-3 w-100 border border-danger border-3 rounded-3"
+            >
+              <a href="tela3.html"
+                ><img src="img/serie8.jpg" class="card-img-top" alt="..."
+              /></a>
+              <div class="card-body bg-black rounded-bottom">
+                <a href="tela3.html" class="text-decoration-none"
+                  ><h4 class="card-title text-danger fw-bold">Card title</h4></a
+                >
+                <p class="card-text text-white">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3">
+            <div
+              class="card m-auto my-3 w-100 border border-danger border-3 rounded-3"
+            >
+              <a href="tela3.html"
+                ><img src="img/serie9.jpg" class="card-img-top" alt="..."
+              /></a>
+              <div class="card-body bg-black rounded-bottom">
+                <a href="tela3.html" class="text-decoration-none"
+                  ><h4 class="card-title text-danger fw-bold">Card title</h4></a
+                >
+                <p class="card-text text-white">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3">
+            <div
+              class="card m-auto my-3 w-100 border border-danger border-3 rounded-3"
+            >
+              <a href="tela3.html"
+                ><img src="img/serie10.jpg" class="card-img-top" alt="..."
+              /></a>
+              <div class="card-body bg-black rounded-bottom">
+                <a href="tela3.html" class="text-decoration-none"
+                  ><h4 class="card-title text-danger fw-bold">Card title</h4></a
+                >
+                <p class="card-text text-white">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-black text-lg-start w-100 mt-5">
+      <div class="container">
+        <div class="row text-center text-danger py-4">
+          <div class="col-lg-4">
+            <h5 class="mb-3 fw-bold" id="fonte">Ajuda</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="text-danger text-decoration-none"
+                  >Fale conosco</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-danger text-decoration-none">Dúvidas</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-4">
+            <h5 class="mb-3 fw-bold" id="fonte">Links</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="text-danger text-decoration-none"
+                  >Política de Privacidade</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-danger text-decoration-none"
+                  >Termos de Serviço</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-4">
+            <div class="corImg">
+              <h5 class="mb-3 fw-bold" id="fonte">Redes Sociais</h5>
+              <a
+                href="https://github.com/mateusferrao/DIW_Trabalho-Pratico-1_Portal-de-Series"
+                target="_blank"
+                class="mx-2 text-danger"
+                ><i class="bi bi-github" style="font-size: 2rem"></i
+              ></a>
+              <a
+                href="https://www.facebook.com"
+                target="_blank"
+                class="mx-2 text-danger"
+                ><i class="bi bi-facebook" style="font-size: 2rem"></i
+              ></a>
+              <a
+                href="https://www.instagram.com"
+                target="_blank"
+                class="mx-2 text-danger"
+                ><i class="bi bi-instagram" style="font-size: 2rem"></i
+              ></a>
+            </div>
+          </div>
+        </div>
       </div>
-
-    </section>
-
-    <section class="m-4 mt-5 row">
-      <h2 class="fw-bold border-bottom border-black pb-2">Informações do(a) Aluno(a)</h2>
-      <div class="m-3 d-flex flex-wrap row gap-5">
-        <div class="col-lg-7">
-          <h4 class="text-danger">Sobre</h4>
-          <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, quaerat explicabo perferendis culpa nesciunt veniam nisi obcaecati possimus perspiciatis. Voluptatum impedit at consectetur adipisci ad a sed tenetur eos quos veniam? Magnam neque architecto illo. Ea sint distinctio harum, obcaecati molestias dolores, doloremque ullam nisi iusto, accusantium hic architecto dolorum soluta! Labore ipsa in veniam, cumque quis maxime. Ducimus nam ipsum quidem neque, officia aliquam, commodi error, ipsa dolore ullam doloremque labore veniam fugiat maiores. Earum iste impedit aliquid deserunt voluptatem, voluptatum adipisci dolores maiores delectus, quia veniam veritatis necessitatibus commodi? Eveniet error cumque perferendis sint! Nihil laboriosam alias praesentium mollitia laborum aspernatur, porro a totam consequuntur aut earum numquam doloribus facilis blanditiis assumenda voluptatem, voluptas eum quidem ex! Accusantium ipsum odit officia cupiditate veritatis labore aliquam molestias facilis consequuntur error, reiciendis consequatur quisquam veniam impedit quasi laboriosam officiis commodi quae perferendis accusamus minus natus sed! Explicabo voluptas incidunt sapiente?</p>
-        </div>
-        <div class="col-lg">
-          <div class="col-lg-6">
-            <h4 class="text-danger">Autoria</h4>
-            <div class="d-flex">
-              <img class="mt-3 col-2" src="img/perfil.png" alt="" width="100px" style="min-width: 100px;">
-              <ul class="col-10 m-auto mx-3 list-unstyled">
-                <li><span class="fw-bold">Aluno: </span>Mateus Ferrão</li>
-                <li><span class="fw-bold">Curso: </span>Engenharia de Software</li>
-                <li><span class="fw-bold">Turma: </span>Noite</li>
-              </ul>
-            </div>
-          </div>
-          <div>
-            <h4 class="text-danger my-3 me-2 d-inline-block">Redes Sociais: </h4>
-            <a href="https://github.com/mateusferrao/DIW_Trabalho-Pratico-1_Portal-de-Series" target="_blank" class="mx-2 text-black"><i class="bi bi-github"
-              style="font-size: 2rem"></i></a>
-          <a href="https://www.facebook.com" target="_blank" class="mx-2 text-black"><i class="bi bi-facebook"
-              style="font-size: 2rem"></i></a>
-          <a href="https://www.instagram.com" target="_blank" class="mx-2 text-black"><i class="bi bi-instagram"
-              style="font-size: 2rem"></i></a>
-          </div>
-        </div>
+      <div class="text-center p-3 text-danger fs-6" id="fonte">
+        PRIMEFLIX © 2024 - All Rights Reserved
       </div>
-    </section>
-
-    <section class="m-4">
-      <h2 class="fw-bold border-bottom border-black pb-2">Minhas Séries</h2>
-
-      <div class="mx-4 d-flex flex-wrap row">
-
-        <div class="col-lg-3">
-          <div class="card m-auto my-3 w-100 border border-danger border-3 rounded-3">
-            <a href="tela3.html"><img src="img/serie5.jpg" class="card-img-top" alt="..."></a>
-            <div class="card-body bg-black rounded-bottom">
-              <a href="tela3.html" class="text-decoration-none"><h4 class="card-title text-danger fw-bold">Card title</h4></a>
-              <p class="card-text text-white">Some quick example text to build on the card title and make up the bulk of
-                the card's
-                content.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3">
-          <div class="card m-auto my-3 w-100 border border-danger border-3 rounded-3">
-            <a href="tela3.html"><img src="img/serie6.png" class="card-img-top" alt="..."></a>
-            <div class="card-body bg-black rounded-bottom">
-              <a href="tela3.html" class="text-decoration-none"><h4 class="card-title text-danger fw-bold">Card title</h4></a>
-              <p class="card-text text-white">Some quick example text to build on the card title and make up the bulk of
-                the card's
-                content.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3">
-          <div class="card m-auto my-3 w-100 border border-danger border-3 rounded-3">
-            <a href="tela3.html"><img src="img/serie7.jpg" class="card-img-top" alt="..."></a>
-            <div class="card-body bg-black rounded-bottom">
-              <a href="tela3.html" class="text-decoration-none"><h4 class="card-title text-danger fw-bold">Card title</h4></a>
-              <p class="card-text text-white">Some quick example text to build on the card title and make up the bulk of
-                the card's
-                content.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3">
-          <div class="card m-auto my-3 w-100 border border-danger border-3 rounded-3">
-            <a href="tela3.html"><img src="img/serie8.jpg" class="card-img-top" alt="..."></a>
-            <div class="card-body bg-black rounded-bottom">
-              <a href="tela3.html" class="text-decoration-none"><h4 class="card-title text-danger fw-bold">Card title</h4></a>
-              <p class="card-text text-white">Some quick example text to build on the card title and make up the bulk of
-                the card's
-                content.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3">
-          <div class="card m-auto my-3 w-100 border border-danger border-3 rounded-3">
-            <a href="tela3.html"><img src="img/serie9.jpg" class="card-img-top" alt="..."></a>
-            <div class="card-body bg-black rounded-bottom">
-              <a href="tela3.html" class="text-decoration-none"><h4 class="card-title text-danger fw-bold">Card title</h4></a>
-              <p class="card-text text-white">Some quick example text to build on the card title and make up the bulk of
-                the card's
-                content.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3">
-          <div class="card m-auto my-3 w-100 border border-danger border-3 rounded-3">
-            <a href="tela3.html"><img src="img/serie10.jpg" class="card-img-top" alt="..."></a>
-            <div class="card-body bg-black rounded-bottom">
-              <a href="tela3.html" class="text-decoration-none"><h4 class="card-title text-danger fw-bold">Card title</h4></a>
-              <p class="card-text text-white">Some quick example text to build on the card title and make up the bulk of
-                the card's
-                content.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-  </main>
-
-  <footer class="bg-black text-lg-start w-100 mt-5">
-    <div class="container">
-      <div class="row text-center text-danger py-4">
-        <div class="col-lg-4">
-          <h5 class="mb-3 fw-bold" id="fonte">Ajuda</h5>
-          <ul class="list-unstyled">
-            <li>
-              <a href="#" class="text-danger text-decoration-none">Fale conosco</a>
-            </li>
-            <li>
-              <a href="#" class="text-danger text-decoration-none">Dúvidas</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-lg-4">
-          <h5 class="mb-3 fw-bold" id="fonte">Links</h5>
-          <ul class="list-unstyled">
-            <li>
-              <a href="#" class="text-danger text-decoration-none">Política de Privacidade</a>
-            </li>
-            <li>
-              <a href="#" class="text-danger text-decoration-none">Termos de Serviço</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-lg-4">
-          <div class="corImg">
-            <h5 class="mb-3 fw-bold" id="fonte">Redes Sociais</h5>
-            <a href="https://github.com/mateusferrao/DIW_Trabalho-Pratico-1_Portal-de-Series" target="_blank" class="mx-2 text-danger"><i class="bi bi-github"
-                style="font-size: 2rem"></i></a>
-            <a href="https://www.facebook.com" target="_blank" class="mx-2 text-danger"><i class="bi bi-facebook"
-                style="font-size: 2rem"></i></a>
-            <a href="https://www.instagram.com" target="_blank" class="mx-2 text-danger"><i class="bi bi-instagram"
-                style="font-size: 2rem"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="text-center p-3 text-danger fs-6" id="fonte">
-      PRIMEFLIX © 2024 - All Rights Reserved
-    </div>
-  </footer>
-
-</body>
-
+    </footer>
+  </body>
 </html>

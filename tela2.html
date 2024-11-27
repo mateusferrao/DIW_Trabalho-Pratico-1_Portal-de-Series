@@ -141,13 +141,19 @@
       function displayResults(results) {
         let telaExplorador = document.getElementById('explorador');
         telaExplorador.innerHTML = ''; 
-        console.log(results[0]);
         for(let i = 0; i < 9; i++){
-          displayCard(results[i]);
+          fetch(`https://api.themoviedb.org/3/tv/${results[i].id}/credits?api_key=${apiKey}&language=pt-BR`)
+        .then(response => response.json())
+        .then(creditsData => {
+          const actors = creditsData.cast
+          .slice(0, 12);
+          displayCard(results[i], actors);
+        })
+        .catch(error => console.error(error));
         }
       }
 
-      function displayCard(result) {
+      function displayCard(result, actors) {
         let telaExplorador = document.getElementById('explorador');
         let posterPath = `https://image.tmdb.org/t/p/w200${result.poster_path}`;
         let genres = result.genre_ids.map(id => genreMap[id]).join(', ');
@@ -155,28 +161,30 @@
         let overview = result.overview;
         let avaliacao = result.vote_average;
         let pais = result.origin_country;
-        console.log(result);
+        let nomeAtores = actors.map(actor => actor.name);
+        let nomePersonagens = actors.map(actor => actor.character);
+        console.log(actors);
 
         let cardHTML = `
           <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4">
-            <div class="card m-auto my-3 border border-danger border-3 rounded-3" style="width: 18rem">
-              <img src="${posterPath}" class="card-img-top" alt="${result.name}">
-              <div class="card-body bg-black rounded-bottom">
-                <a href="tela3.html?name=${encodeURIComponent(result.name)}&genres=${encodeURIComponent(genres)}&ano=${encodeURIComponent(ano)}&posterPath=${encodeURIComponent(posterPath)}&overview=${encodeURIComponent(overview)}&avaliacao=${encodeURIComponent(avaliacao)}&pais=${encodeURIComponent(pais)}" class="text-decoration-none">
-                  <h5 class="card-title text-danger fw-bold">${result.name}</h5>
+        <div class="card m-auto my-3 border border-danger border-3 rounded-3" style="width: 18rem">
+          <img src="${posterPath}" class="card-img-top" alt="${result.name}">
+          <div class="card-body bg-black rounded-bottom">
+            <a href="tela3.html?name=${encodeURIComponent(result.name)}&genres=${encodeURIComponent(genres)}&ano=${encodeURIComponent(ano)}&posterPath=${encodeURIComponent(posterPath)}&overview=${encodeURIComponent(overview)}&avaliacao=${encodeURIComponent(avaliacao)}&pais=${encodeURIComponent(pais)}&atores=${encodeURIComponent(nomeAtores)}&personagens=${encodeURIComponent(nomePersonagens)}" class="text-decoration-none">
+              <h5 class="card-title text-danger fw-bold">${result.name}</h5>
+            </a>
+            <ul class="card-text m-0 p-0">
+              <li class="text-white list-unstyled"><span class="text-danger">GÊNERO:</span> ${genres}</li>
+              <li class="text-white list-unstyled"><span class="text-danger">ANO:</span> ${ano}</li>
+              <li class="list-group-item bg-black border-top-0 border-2 border-danger d-flex flex-row-reverse">
+                <a href="tela3.html?name=${encodeURIComponent(result.name)}&genres=${encodeURIComponent(genres)}&ano=${encodeURIComponent(ano)}&posterPath=${encodeURIComponent(posterPath)}&overview=${encodeURIComponent(overview)}&avaliacao=${encodeURIComponent(avaliacao)}&pais=${encodeURIComponent(pais)}&atores=${encodeURIComponent(nomeAtores)}&personagens=${encodeURIComponent(nomePersonagens)}">
+                  <button type="button" class="btn btn-outline-danger">Ver Mais</button>
                 </a>
-                <ul class="card-text m-0 p-0">
-                  <li class="text-white list-unstyled"><span class="text-danger">GÊNERO:</span> ${genres}</li>
-                  <li class="text-white list-unstyled"><span class="text-danger">ANO:</span> ${ano}</li>
-                  <li class="list-group-item bg-black border-top-0 border-2 border-danger d-flex flex-row-reverse">
-                    <a href="tela3.html?name=${encodeURIComponent(result.name)}&genres=${encodeURIComponent(genres)}&ano=${encodeURIComponent(ano)}&posterPath=${encodeURIComponent(posterPath)}&overview=${encodeURIComponent(overview)}&avaliacao=${encodeURIComponent(avaliacao)}&pais=${encodeURIComponent(pais)}">
-                      <button type="button" class="btn btn-outline-danger">Ver Mais</button>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>`;
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>`;
         
         telaExplorador.innerHTML += cardHTML;
       }
