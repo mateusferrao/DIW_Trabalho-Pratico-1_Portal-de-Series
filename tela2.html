@@ -42,29 +42,30 @@
   </header>
 
 
-    <div class="d-lg-flex col">
-      <!-- <div class="col-lg-3">
+  <div class="d-lg-flex col">
+    <!-- <div class="col-lg-3">
           <section class="my-4 mx-3">
     
           </section>
       </div> -->
 
-      <main class="">
-        <section class="my-2 mx-2 ">
-          <div class="mx-4">
-            <form class="d-flex mb-4" role="search">
-              <input class="form-control me-2 border-danger border-2" type="search" placeholder="Pesquisar conteúdo"
-                aria-label="Search" id="inputPesquisa">
-              <div class="bg-black rounded">
-                <button type="button" class="btn btn-outline-danger border-2" id="lupa"><i class="bi bi-search"></i></button>
-              </div>
-            </form>
-          </div>
-          <div class="mx-4 row g-4" id="explorador">
-          </div>
-        </section>
-      </main>
-    </div>
+    <main class="">
+      <section class="my-2 mx-2 ">
+        <div class="mx-4">
+          <form class="d-flex mb-4" role="search">
+            <input class="form-control me-2 border-danger border-2" type="search" placeholder="Pesquisar conteúdo"
+              aria-label="Search" id="inputPesquisa">
+            <div class="bg-black rounded">
+              <button type="button" class="btn btn-outline-danger border-2" id="lupa"><i
+                  class="bi bi-search"></i></button>
+            </div>
+          </form>
+        </div>
+        <div class="mx-4 row g-4" id="explorador">
+        </div>
+      </section>
+    </main>
+  </div>
 
   <footer class="bg-black text-lg-start w-100 mt-5">
     <div class="container">
@@ -93,9 +94,12 @@
         </div>
         <div class="col-lg-4">
           <h5 class="mb-3 fw-bold" id="fonte">Siga-nos</h5>
-          <a href="https://github.com" target="_blank" class="mx-2 text-danger"><i class="bi bi-github" style="font-size: 2rem"></i></a>
-          <a href="https://www.facebook.com" target="_blank" class="mx-2 text-danger"><i class="bi bi-facebook" style="font-size: 2rem"></i></a>
-          <a href="https://www.instagram.com" target="_blank" class="mx-2 text-danger"><i class="bi bi-instagram" style="font-size: 2rem"></i></a>
+          <a href="https://github.com" target="_blank" class="mx-2 text-danger"><i class="bi bi-github"
+              style="font-size: 2rem"></i></a>
+          <a href="https://www.facebook.com" target="_blank" class="mx-2 text-danger"><i class="bi bi-facebook"
+              style="font-size: 2rem"></i></a>
+          <a href="https://www.instagram.com" target="_blank" class="mx-2 text-danger"><i class="bi bi-instagram"
+              style="font-size: 2rem"></i></a>
         </div>
       </div>
     </div>
@@ -105,7 +109,7 @@
   </footer>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const apiKey = '5c466935d6f12993aa42dbff45b7dc2d';
       const searchButton = document.getElementById('lupa');
       const searchInput = document.getElementById('inputPesquisa');
@@ -126,7 +130,7 @@
         })
         .catch(error => console.error(error));
 
-      searchButton.addEventListener('click', function() {
+      searchButton.addEventListener('click', function () {
         const query = searchInput.value;
         if (query) {
           fetch(`https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&query=${query}&language=pt-BR`)
@@ -140,20 +144,30 @@
 
       function displayResults(results) {
         let telaExplorador = document.getElementById('explorador');
-        telaExplorador.innerHTML = ''; 
-        for(let i = 0; i < 9; i++){
+        telaExplorador.innerHTML = '';
+        for (let i = 0; i < 9; i++) {
           fetch(`https://api.themoviedb.org/3/tv/${results[i].id}/credits?api_key=${apiKey}&language=pt-BR`)
-        .then(response => response.json())
-        .then(creditsData => {
-          const actors = creditsData.cast
-          .slice(0, 12);
-          displayCard(results[i], actors);
-        })
-        .catch(error => console.error(error));
+            .then(response => response.json())
+            .then(creditsData => {
+              const actors = creditsData.cast
+                .slice(0, 9);
+              fetch(`https://api.themoviedb.org/3/tv/${results[i].id}?api_key=${apiKey}&language=pt-BR`)
+                .then(response => response.json())
+                .then(seriesData => {
+                  const seasons = seriesData.seasons.slice(0, 4).map(season => ({
+                    name: season.name,
+                    year: season.air_date ? season.air_date.split('-')[0] : 'N/A',
+                    poster: season.poster_path
+                  }));
+                  displayCard(results[i], actors, seasons);
+                })
+                .catch(error => console.error(error));
+            })
+            .catch(error => console.error(error));
         }
       }
 
-      function displayCard(result, actors) {
+      function displayCard(result, actors, seasons) {
         let telaExplorador = document.getElementById('explorador');
         let posterPath = `https://image.tmdb.org/t/p/w200${result.poster_path}`;
         let genres = result.genre_ids.map(id => genreMap[id]).join(', ');
@@ -161,23 +175,26 @@
         let overview = result.overview;
         let avaliacao = result.vote_average;
         let pais = result.origin_country;
+        let imagemAtores = actors.map(actor => `https://image.tmdb.org/t/p/w200${actor.profile_path}`);
         let nomeAtores = actors.map(actor => actor.name);
         let nomePersonagens = actors.map(actor => actor.character);
-        console.log(actors);
+        let temporadas = seasons.map(season => season.name);
+        let anoTemporadas = seasons.map(season => season.year);
+        let posterTemporada = seasons.map(season => `https://image.tmdb.org/t/p/w200${season.poster}`);
 
         let cardHTML = `
           <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4">
         <div class="card m-auto my-3 border border-danger border-3 rounded-3" style="width: 18rem">
           <img src="${posterPath}" class="card-img-top" alt="${result.name}">
           <div class="card-body bg-black rounded-bottom">
-            <a href="tela3.html?name=${encodeURIComponent(result.name)}&genres=${encodeURIComponent(genres)}&ano=${encodeURIComponent(ano)}&posterPath=${encodeURIComponent(posterPath)}&overview=${encodeURIComponent(overview)}&avaliacao=${encodeURIComponent(avaliacao)}&pais=${encodeURIComponent(pais)}&atores=${encodeURIComponent(nomeAtores)}&personagens=${encodeURIComponent(nomePersonagens)}" class="text-decoration-none">
+            <a href="tela3.html?name=${encodeURIComponent(result.name)}&genres=${encodeURIComponent(genres)}&ano=${encodeURIComponent(ano)}&posterPath=${encodeURIComponent(posterPath)}&overview=${encodeURIComponent(overview)}&avaliacao=${encodeURIComponent(avaliacao)}&pais=${encodeURIComponent(pais)}&atores=${encodeURIComponent(nomeAtores)}&personagens=${encodeURIComponent(nomePersonagens)}&imagemAtores=${encodeURIComponent(imagemAtores)}&temporadas=${encodeURIComponent(temporadas)}&anoTemporadas=${encodeURIComponent(anoTemporadas)}&posterTemporada=${encodeURIComponent(posterTemporada)}" class="text-decoration-none">
               <h5 class="card-title text-danger fw-bold">${result.name}</h5>
             </a>
             <ul class="card-text m-0 p-0">
               <li class="text-white list-unstyled"><span class="text-danger">GÊNERO:</span> ${genres}</li>
               <li class="text-white list-unstyled"><span class="text-danger">ANO:</span> ${ano}</li>
               <li class="list-group-item bg-black border-top-0 border-2 border-danger d-flex flex-row-reverse">
-                <a href="tela3.html?name=${encodeURIComponent(result.name)}&genres=${encodeURIComponent(genres)}&ano=${encodeURIComponent(ano)}&posterPath=${encodeURIComponent(posterPath)}&overview=${encodeURIComponent(overview)}&avaliacao=${encodeURIComponent(avaliacao)}&pais=${encodeURIComponent(pais)}&atores=${encodeURIComponent(nomeAtores)}&personagens=${encodeURIComponent(nomePersonagens)}">
+                <a href="tela3.html?name=${encodeURIComponent(result.name)}&genres=${encodeURIComponent(genres)}&ano=${encodeURIComponent(ano)}&posterPath=${encodeURIComponent(posterPath)}&overview=${encodeURIComponent(overview)}&avaliacao=${encodeURIComponent(avaliacao)}&pais=${encodeURIComponent(pais)}&atores=${encodeURIComponent(nomeAtores)}&personagens=${encodeURIComponent(nomePersonagens)}&imagemAtores=${encodeURIComponent(imagemAtores)}&temporadas=${encodeURIComponent(temporadas)}&anoTemporadas=${encodeURIComponent(anoTemporadas)}&posterTemporada=${encodeURIComponent(posterTemporada)}">
                   <button type="button" class="btn btn-outline-danger">Ver Mais</button>
                 </a>
               </li>
@@ -185,9 +202,95 @@
           </div>
         </div>
       </div>`;
-        
+
         telaExplorador.innerHTML += cardHTML;
       }
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const apiKey = '5c466935d6f12993aa42dbff45b7dc2d';
+      const genreMap = {};
+
+      // Fetch genres and create a map
+      fetch(`https://api.themoviedb.org/3/genre/tv/list?api_key=${apiKey}&language=pt-BR`)
+        .then(response => response.json())
+        .then(data => {
+          data.genres.forEach(genre => {
+            genreMap[genre.id] = genre.name;
+          });
+
+          // Fetch popular TV shows
+          return fetch(`https://api.themoviedb.org/3/tv/popular?language=pt-BR&api_key=${apiKey}`);
+        })
+        .then(response => response.json())
+        .then(data => {
+          displayResults(data.results);
+        })
+        .catch(error => console.error(error));
+
+      function displayResults(results) {
+        let telaNovasSeries = document.getElementById("novasSeries");
+
+        for (let i = 0; i < 3; i++) {
+          fetch(`https://api.themoviedb.org/3/tv/${results[i].id}/credits?api_key=${apiKey}&language=pt-BR`)
+            .then(response => response.json())
+            .then(creditsData => {
+              const actors = creditsData.cast.slice(0, 9);
+
+              fetch(`https://api.themoviedb.org/3/tv/${results[i].id}?api_key=${apiKey}&language=pt-BR`)
+                .then(response => response.json())
+                .then(seriesData => {
+                  const seasons = seriesData.seasons.slice(0, 4).map(season => ({
+                    name: season.name,
+                    year: season.air_date ? season.air_date.split('-')[0] : 'N/A'
+                  }));
+
+                  // displayCard(results[i], actors, seasons);
+                })
+                .catch(error => console.error(error));
+            })
+            .catch(error => console.error(error));
+        }
+      }
+
+      // function displayCard(result, actors, seasons) {
+      //   let telaNovasSeries = document.getElementById("novasSeries");
+      //   let posterPath = `https://image.tmdb.org/t/p/w200${result.poster_path}`;
+      //   let genres = result.genre_ids.map(id => genreMap[id]).join(', ');
+      //   let ano = result.first_air_date ? result.first_air_date.split('-')[0] : 'N/A';
+      //   let overview = result.overview;
+      //   let avaliacao = result.vote_average;
+      //   let pais = result.origin_country;
+      //   let nomeAtores = actors.map(actor => actor.name);
+      //   let nomePersonagens = actors.map(actor => actor.character);
+      //   let profilePaths = actors.map(actor => `https://image.tmdb.org/t/p/w200${actor.profile_path}`);
+      //   let temporadas = seasons.map(season => `${season.name} (${season.year})`).join(', ');
+
+      //   let cardHTML = `
+      //     <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4">
+      //       <div class="card m-auto my-3 border border-danger border-3 rounded-3" style="width: 18rem">
+      //         <img src="${posterPath}" class="card-img-top" alt="${result.name}">
+      //         <div class="card-body bg-black rounded-bottom">
+      //           <a href="tela3.html?name=${encodeURIComponent(result.name)}&genres=${encodeURIComponent(genres)}&ano=${encodeURIComponent(ano)}&posterPath=${encodeURIComponent(posterPath)}&overview=${encodeURIComponent(overview)}&avaliacao=${encodeURIComponent(avaliacao)}&pais=${encodeURIComponent(pais)}&atores=${encodeURIComponent(nomeAtores)}&personagens=${encodeURIComponent(nomePersonagens)}&temporadas=${encodeURIComponent(temporadas)}" class="text-decoration-none">
+      //             <h5 class="card-title text-danger fw-bold">${result.name}</h5>
+      //           </a>
+      //           <ul class="card-text m-0 p-0">
+      //             <li class="text-white list-unstyled"><span class="text-danger">GÊNERO:</span> ${genres}</li>
+      //             <li class="text-white list-unstyled"><span class="text-danger">ANO:</span> ${ano}</li>
+      //             <li class="list-group-item bg-black border-top-0 border-2 border-danger d-flex flex-row-reverse">
+      //               <a href="tela3.html?name=${encodeURIComponent(result.name)}&genres=${encodeURIComponent(genres)}&ano=${encodeURIComponent(ano)}&posterPath=${encodeURIComponent(posterPath)}&overview=${encodeURIComponent(overview)}&avaliacao=${encodeURIComponent(avaliacao)}&pais=${encodeURIComponent(pais)}&atores=${encodeURIComponent(nomeAtores)}&personagens=${encodeURIComponent(nomePersonagens)}&temporadas=${encodeURIComponent(temporadas)}">
+      //                 <button type="button" class="btn btn-outline-danger">Ver Mais</button>
+      //               </a>
+      //             </li>
+      //           </ul>
+      //         </div>
+      //       </div>
+      //     </div>`;
+
+      //   telaNovasSeries.innerHTML += cardHTML;
+      // }
     });
   </script>
 
