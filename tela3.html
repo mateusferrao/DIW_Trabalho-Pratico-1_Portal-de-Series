@@ -39,7 +39,7 @@
     for (let i = 0; i < atores.length; i++) {
       let imagem = imagemAtores[i] && !imagemAtores[i].includes('null') ? imagemAtores[i] : 'img/perfil.png';
 
-      document.getElementById('creditos').innerHTML += `<div class="col-md-4" id="wCard">
+      document.getElementById('creditos').innerHTML += `<div class="col-md-3 col-sm-4" id="wCard">
               <div class="border-2 border-danger card m-auto my-1 w-100">
                 <img src="${imagem}" class="card-img-top" alt="...">
                 <div class="card-body bg-black rounded-1 rounded-top-0">
@@ -53,14 +53,14 @@
     for (let i = 0; i < temporadas.length; i++) {
       let imagem = posterTemporadas[i] && !posterTemporadas[i].includes('undefined') ? posterTemporadas[i] : 'img/semImagem.jpeg';
 
-      document.getElementById('temporadas').innerHTML += `<div class="col-md-3">
+      document.getElementById('temporadas').innerHTML += `<div class="col-md-3 col-sm-4">
           <div class="card m-auto my-3 w-100 border border-danger border-3 rounded-3">
             <img src="${imagem}" class="card-img-top" alt="...">
             <div class="card-body bg-black rounded-bottom">
               <a href="#" class="text-decoration-none">
                 <h4 class="card-title text-danger fw-bold">${temporadas[i]}</h4>
               </a>
-              <p class="card-text text-danger">${anoTemporadas[i]}</p>
+              <h5 class="card-text text-danger">${anoTemporadas[i]}</h5>
             </div>
           </div>
         </div>`;
@@ -107,7 +107,7 @@
     <div class="d-lg-flex mx-2">
       <section class="m-3 mt-4 pb-2 col-lg-4" id="visaoGeral">
         <h2 class="fw-bold border-bottom border-black pb-2">Visão Geral</h2>
-        <div class="card m-auto w-100 border-2 border-danger rounded-3 bg-black" style="width: 18rem;">
+        <div class="card m-auto border-2 border-danger rounded-3 bg-black" id="cardPrincipal">
           <div class="text-end my-2 me-2">
             <button onclick="cliqueFavoritar()" type="button" id="botaoFavoritar" class="btn btn-outline-danger"><i
                 class="bi bi-star-fill fs-4"></i></button>
@@ -165,13 +165,16 @@
       </section>
 
       <section class="mt-4 pb-2">
-        <h2 class="fw-bold border-bottom border-black pb-2">Elenco</h2>
-
-        <div class="col-lg-8 m-auto">
-          <div class="d-flex flex-wrap row g-3" id="creditos">
-
+        <section class="m-4">
+          <h2 class="fw-bold border-bottom border-black pb-2">Elenco</h2>
+    
+          <div class="m-auto d-flex flex-wrap row" id="creditos">
+    
+    
+    
           </div>
-        </div>
+    
+        </section>
     </div>
     </div>
     </div>
@@ -181,7 +184,7 @@
     <section class="m-4">
       <h2 class="fw-bold border-bottom border-black pb-2">Temporadas</h2>
 
-      <div class="mx-4 d-flex flex-wrap row" id="temporadas">
+      <div class="m-auto d-flex flex-wrap row" id="temporadas">
 
 
 

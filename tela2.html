@@ -154,7 +154,7 @@
               fetch(`https://api.themoviedb.org/3/tv/${results[i].id}?api_key=${apiKey}&language=pt-BR`)
                 .then(response => response.json())
                 .then(seriesData => {
-                  const seasons = seriesData.seasons.slice(0, 4).map(season => ({
+                  const seasons = seriesData.seasons.map(season => ({
                     name: season.name,
                     year: season.air_date ? season.air_date.split('-')[0] : 'N/A',
                     poster: season.poster_path
