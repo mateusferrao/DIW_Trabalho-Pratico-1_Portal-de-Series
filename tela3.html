@@ -31,16 +31,16 @@
     const posterTemporadas = urlParams.get('posterTemporada') ? urlParams.get('posterTemporada').split(',') : [];
 
 
-    document.getElementById('titulo').textContent = `${name} (${ano})`;
-    document.getElementById('detalhesGerais').innerHTML = `<span class="text-danger">GÊNERO:</span> ${genres} <br> <span class="text-danger">AVALIAÇÃO:</span> ${avaliacao} <br> <span class="text-danger">PAÍS:</span> ${pais}`;
+    document.getElementById('titulo').textContent = name;
+    document.getElementById('detalhesGerais').innerHTML = `<span class="text-danger">ANO:</span> ${ano} <br> <span class="text-danger">GÊNERO:</span> ${genres} <br> <span class="text-danger">AVALIAÇÃO:</span> ${avaliacao} <br> <span class="text-danger">PAÍS:</span> ${pais}`;
     document.getElementById('overview').textContent = `${descricao}`;
     document.getElementById('poster').src = posterPath;
 
     for (let i = 0; i < atores.length; i++) {
       let imagem = imagemAtores[i] && !imagemAtores[i].includes('null') ? imagemAtores[i] : 'img/perfil.png';
 
-      document.getElementById('creditos').innerHTML += `<div class="col-md-3 col-sm-4" id="wCard">
-              <div class="border-2 border-danger card m-auto my-1 w-100">
+      document.getElementById('creditos').innerHTML += `<div class="col-md-3 col-sm-4" id="wCard" style="min-width: 10rem">
+              <div class="border-2 border-danger card m-auto my-1 w-100" >
                 <img src="${imagem}" class="card-img-top" alt="...">
                 <div class="card-body bg-black rounded-1 rounded-top-0">
                   <h4 class="card-title text-danger">${personagens[i]}</h4>
@@ -51,7 +51,7 @@
     }
 
     for (let i = 0; i < temporadas.length; i++) {
-      let imagem = posterTemporadas[i] && !posterTemporadas[i].includes('undefined') ? posterTemporadas[i] : 'img/semImagem.jpeg';
+      let imagem = (posterTemporadas[i].includes('null') || posterTemporadas[i].includes('undefined')) ? 'img/semImagem.jpeg' : posterTemporadas[i];
 
       document.getElementById('temporadas').innerHTML += `<div class="col-md-3 col-sm-4">
           <div class="card m-auto my-3 w-100 border border-danger border-3 rounded-3">
@@ -97,10 +97,10 @@
     </nav>
   </header>
 
-  <div class="text-end ms-4 mt-3 d-flex flex-no-wrap" id="botaoVoltar">
+  <!-- <div class="text-end ms-4 mt-3 d-flex flex-no-wrap" id="botaoVoltar">
     <a href="tela2.html"><button type="button" class="btn btn-outline-dark"><i
           class="bi bi-arrow-left fs-5 text-danger">Voltar</i></button></a>
-  </div>
+  </div> -->
 
   <main>
 
@@ -109,7 +109,7 @@
         <h2 class="fw-bold border-bottom border-black pb-2">Visão Geral</h2>
         <div class="card m-auto border-2 border-danger rounded-3 bg-black" id="cardPrincipal">
           <div class="text-end my-2 me-2">
-            <button onclick="cliqueFavoritar()" type="button" id="botaoFavoritar" class="btn btn-outline-danger"><i
+            <button type="button" id="botaoFavoritar" class="btn btn-outline-danger"><i
                 class="bi bi-star-fill fs-4"></i></button>
           </div>
           <div class="border-top border-danger border-2">

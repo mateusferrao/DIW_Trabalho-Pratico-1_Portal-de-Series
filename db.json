@@ -1,19 +1,17 @@
 {
-    "autor": [
-        {
-            "id": 1,
-            "nome": "Mateus Ferrão da Costa",
-            "idade": 20,
-            "curso": "Engenharia de Software",
-            "turno": "Noite",
-            "descricao": "Meu nome é Mateus, sou estudante de Engenharia de Software na PUC Minas, atualmente cursando o primeiro período. Tenho grande interesse por desenvolvimento de sistemas e tecnologias inovadoras, com foco na criação de soluções eficientes e no aprimoramento de habilidades técnicas, sempre buscando agregar valor por meio de aprendizado contínuo e trabalho em equipe. Meu objetivo é consolidar uma base sólida no curso e me destacar no mercado como um profissional capaz de alinhar teoria e prática de forma eficaz.",
-            "foto": "img/perfil.png",
-            "linkedin": "https://www.linkedin.com/in/mateus-ferr%C3%A3o-da-costa-7b1b3b1b4/",
-            "github": "https://github.com/mateusferrao/DIW_Trabalho-Pratico-1_Portal-de-Series",
-            "instagram": "https://www.instagram.com/mateusferrao/"
-        }
-    ],
-    "seriesFavoritas": [
-        {}
-    ]
+  "autor": [
+    {
+      "id": "1",
+      "nome": "Mateus Ferrão da Costa",
+      "idade": 20,
+      "curso": "Engenharia de Software",
+      "turno": "Noite",
+      "descricao": "Meu nome é Mateus, sou estudante de Engenharia de Software na PUC Minas, atualmente cursando o primeiro período. Tenho grande interesse por desenvolvimento de sistemas e tecnologias inovadoras, com foco na criação de soluções eficientes e no aprimoramento de habilidades técnicas, sempre buscando agregar valor por meio de aprendizado contínuo e trabalho em equipe. Meu objetivo é consolidar uma base sólida no curso e me destacar no mercado como um profissional capaz de alinhar teoria e prática de forma eficaz.",
+      "foto": "img/perfil.png",
+      "linkedin": "https://www.linkedin.com/in/mateus-ferr%C3%A3o-da-costa-7b1b3b1b4/",
+      "github": "https://github.com/mateusferrao/DIW_Trabalho-Pratico-1_Portal-de-Series",
+      "instagram": "https://www.instagram.com/mateusferrao/"
+    }
+  ],
+  "seriesFavoritas": []
 }

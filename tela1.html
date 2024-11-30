@@ -9,6 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
   <link rel="shortcut icon" href="img/favicon-16x16.png" />
   <link rel="stylesheet" href="style_tela1.css" />
+  <script src="script_tela3.js"></script>
   <title>Home</title>
 </head>
 
@@ -94,6 +95,10 @@
       <div class="mx-4 row" id="novasSeries">
         <script>
           document.addEventListener('DOMContentLoaded', function() {
+            carregarSeriesFavoritas();
+            if (window.location.search.includes('favoritas')) {
+              document.getElementById('footer').scrollIntoView({behavior:"instant"});
+            }
             const apiKey = '5c466935d6f12993aa42dbff45b7dc2d';
             const genreMap = {};
 
@@ -164,7 +169,6 @@
                       </a>
                       <ul class="card-text m-0 p-0">
                         <li class="text-white list-unstyled"><span class="text-danger">GÊNERO:</span> ${genres}</li>
-                        <li class="text-white list-unstyled"><span class="text-danger">ANO:</span> ${ano}</li>
                         <li class="list-group-item bg-black border-top-0 border-2 border-danger d-flex flex-row-reverse">
                           <a href="tela3.html?name=${encodeURIComponent(result.name)}&genres=${encodeURIComponent(genres)}&ano=${encodeURIComponent(ano)}&posterPath=${encodeURIComponent(posterPath)}&overview=${encodeURIComponent(overview)}&avaliacao=${encodeURIComponent(avaliacao)}&pais=${encodeURIComponent(pais)}&atores=${encodeURIComponent(nomeAtores)}&personagens=${encodeURIComponent(nomePersonagens)}&imagemAtores=${encodeURIComponent(imagemAtores)}&temporadas=${encodeURIComponent(temporadas)}&anoTemporadas=${encodeURIComponent(anoTemporadas)}&posterTemporada=${encodeURIComponent(posterTemporada)}">
                             <button type="button" class="btn btn-outline-danger">Ver Mais</button>
@@ -207,7 +211,15 @@
         .catch(error => console.error(error));
     </script>
 
-    <section class="m-4 mt-5 row">
+    <section class="m-4">
+      <h2 class="fw-bold border-bottom border-black pb-2" id="favoritasTitulo">Séries Favoritas</h2>
+
+      <div class="mx-4 d-flex flex-wrap row" id="seriesFavoritas">
+        
+      </div>
+    </section>
+
+    <section class="m-4">
       <h2 class="fw-bold border-bottom border-black pb-2">
         Informações do(a) Aluno(a)
       </h2>
@@ -246,105 +258,9 @@
         </div>
       </div>
     </section>
-
-    <section class="m-4">
-      <h2 class="fw-bold border-bottom border-black pb-2">Séries Favoritas</h2>
-
-      <div class="mx-4 d-flex flex-wrap row">
-        <div class="col-lg-3">
-          <div class="card m-auto my-3 w-100 border border-danger border-3 rounded-3">
-            <a href="tela3.html"><img src="img/serie5.jpg" class="card-img-top" alt="..." /></a>
-            <div class="card-body bg-black rounded-bottom">
-              <a href="tela3.html" class="text-decoration-none">
-                <h4 class="card-title text-danger fw-bold">Card title</h4>
-              </a>
-              <p class="card-text text-white">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3">
-          <div class="card m-auto my-3 w-100 border border-danger border-3 rounded-3">
-            <a href="tela3.html"><img src="img/serie6.png" class="card-img-top" alt="..." /></a>
-            <div class="card-body bg-black rounded-bottom">
-              <a href="tela3.html" class="text-decoration-none">
-                <h4 class="card-title text-danger fw-bold">Card title</h4>
-              </a>
-              <p class="card-text text-white">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3">
-          <div class="card m-auto my-3 w-100 border border-danger border-3 rounded-3">
-            <a href="tela3.html"><img src="img/serie7.jpg" class="card-img-top" alt="..." /></a>
-            <div class="card-body bg-black rounded-bottom">
-              <a href="tela3.html" class="text-decoration-none">
-                <h4 class="card-title text-danger fw-bold">Card title</h4>
-              </a>
-              <p class="card-text text-white">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3">
-          <div class="card m-auto my-3 w-100 border border-danger border-3 rounded-3">
-            <a href="tela3.html"><img src="img/serie8.jpg" class="card-img-top" alt="..." /></a>
-            <div class="card-body bg-black rounded-bottom">
-              <a href="tela3.html" class="text-decoration-none">
-                <h4 class="card-title text-danger fw-bold">Card title</h4>
-              </a>
-              <p class="card-text text-white">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3">
-          <div class="card m-auto my-3 w-100 border border-danger border-3 rounded-3">
-            <a href="tela3.html"><img src="img/serie9.jpg" class="card-img-top" alt="..." /></a>
-            <div class="card-body bg-black rounded-bottom">
-              <a href="tela3.html" class="text-decoration-none">
-                <h4 class="card-title text-danger fw-bold">Card title</h4>
-              </a>
-              <p class="card-text text-white">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3">
-          <div class="card m-auto my-3 w-100 border border-danger border-3 rounded-3">
-            <a href="tela3.html"><img src="img/serie10.jpg" class="card-img-top" alt="..." /></a>
-            <div class="card-body bg-black rounded-bottom">
-              <a href="tela3.html" class="text-decoration-none">
-                <h4 class="card-title text-danger fw-bold">Card title</h4>
-              </a>
-              <p class="card-text text-white">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <footer class="bg-black text-lg-start w-100 mt-5">
+  <footer class="bg-black text-lg-start w-100 mt-5" id="footer">
     <div class="container">
       <div class="row text-center text-danger py-4">
         <div class="col-lg-4">
