@@ -94,7 +94,7 @@
 
       <div class="mx-4 row" id="novasSeries">
         <script>
-          document.addEventListener('DOMContentLoaded', function() {
+          document.addEventListener('DOMContentLoaded', () => {
             carregarSeriesFavoritas();
             if (window.location.search.includes('favoritas')) {
               document.getElementById('footer').scrollIntoView({behavior:"instant"});
